@@ -57,6 +57,7 @@ body{
 
 nav.navbar-transparente {
 	padding: 15px 0px;
+	width: 1349px;
 	background: rgba(197, 229, 240, 0.8);
 	border: none; /* tira a borda preta que estava lá */
 }
