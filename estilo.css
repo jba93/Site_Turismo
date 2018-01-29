@@ -205,6 +205,9 @@ h3{
 	.btn-capa-index{
 		margin: 10px 15px;
 	}
+	nav.navbar-transparente {
+		margin-right: 0px;
+	}
 }
 
 /* sm */
