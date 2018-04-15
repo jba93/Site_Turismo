@@ -2,27 +2,21 @@
 html, body, .capa-index, .capa-quem-somos, .capa-destinos, .capa-blog, .capa-contato {  /*aplica na tag html,
 	body, e na classe capa */
 	height: 100%;
+	width: 100%;
 	overflow: auto; /* cria barra de rolagem se necessário */
 }
 
 .capa-index, .capa-quem-somos, .capa-destinos, .capa-blog, .capa-contato{
 	display: table; /* comportamento de tabela */
 	width: 100%;
+	height: 100%;
 }
 
 body{
-	/* capa com os artistas e efeitos de cor */
 	background-attachment: fixed;
-	font-family: Helvetica,Arial,sans-serif;
+	font-family: Arial, sans-serif;
 	overflow-x: hidden; /* faz desaparecer a barra de rolagem horizontal */
-}
-
-.link-verde{
-	color: #82B54E;
-}
-
-.link-verde:hover{
-	color: #82B54E;
+	background: #F5F5F5;
 }
 
 .sombreado{
@@ -36,45 +30,94 @@ body{
 	color: white;
 }
 
-.corpo{
+p{
+	font-family: Arial, sans-serif;
 	background-color: white;
-	margin-bottom: 10px;
 	padding: 20px;
-	border-radius:  20px;
-	-webkit-border-radius: 20px;
-	-moz-border-radius: 20px;
+}
+
+a{
+	color: green;
+}
+
+a:hover{
+	color: black;
+	text-decoration: none;
+}
+
+.corpo{
+	background: white;
+	border-radius: 10px;
+	padding: 10px;
+	margin-top: 5px;
 }
 
 /********** Barra de Navegação - Menu **********/ 
-.img-logo {
+#img-logo{
 	height: 80px;
-	width: 264px;
+	width: 80px;
 	display: block; /* pois o span é inline, mas precisamos dele como bloco para que fique as medidas definidas acima */
-	background: url('_img/logo_preto.png') no-repeat; 
 	background-size: contain; /* contain faz com que o background seja do tamanho definido acima */ 
-	color: transparent;
+	float: left;
+	background: url('_img/icone-verde.svg');	
+	border: none;
+}
+
+#img-logo:hover{
+	height: 80px;
+	width: 80px;
+	display: block; /* pois o span é inline, mas precisamos dele como bloco para que fique as medidas definidas acima */
+	background-size: contain; /* contain faz com que o background seja do tamanho definido acima */ 
+	float: left;
+	border: none;
+	background: url('_img/icone-preto.svg');
+}
+
+#nome-brand{
+	float: right;
+	color: #82B54E;
+	font-family: Arial, sans-serif;
+	font-size: 30px;
+	font-weight: 700;
+	padding-top: 30px;
+	border: none;
+}
+
+#barra-navegacao{
+	display: table-cell;
+	vertical-align: middle;
+	padding-top: 20px;
+}
+
+#logo:hover{
+	color: black;
+	border: none;
 }
 
 nav.navbar-transparente {
-	padding: 15px 0px;
-	margin-right: 17px; /* para não ficar sobre a barra de rolagem */
-	background: rgba(197, 229, 240, 0.8);
+	/*margin-right: 17px; /* para não ficar sobre a barra de rolagem */
+	background: #F5F5F5;
 	border: none; /* tira a borda preta que estava lá */
+	height: 80px;
 }
 
 .navbar-brand{
-	padding: 5px 15px; /* superior e inferior, laterais */
+	padding: 3px 15px; /* superior e inferior, laterais */
 }
 
-.navbar-inverse .navbar-nav>li>a, footer .nav a{ /* seleciona o link a que está dentro do list item li que está na classe .navbar-nav e 
+.navbar-inverse .navbar-nav>li>a, .nav a{ /* seleciona o link a que está dentro do list item li que está na classe .navbar-nav e 
 	.navbar-inverse. Os > "pegam" o filho imediato, li>a pega o "a" que for filho imediado de "li", se fosse só >li a 
 	iria formatar todos os links dentro de li */
-	color: black;
+	color: #82B54E;
+	font-family: Arial, sans-serif;
+	font-size: 18px;
+	font-weight: 700;
 }
 
-.navbar-inverse .navbar-nav>li>a:hover, footer .nav a:hover{ 
-	color: #FFF;
+.navbar-inverse .navbar-nav>li>a:hover, .nav a:hover, .navbar-brand>a:hover, #nome-brand:hover{ 
+	color: black;
 	background: none;
+	text-decoration: none;
 }
 
 /********** Index **********/ 
@@ -151,16 +194,26 @@ nav.navbar-transparente {
 
 /********** Rodapé **********/ 
 footer{
-	background: rgba(197, 229, 240, 0.8);
-	padding: 10px 0px 10px 0;
-	color: black;
+	background: #F5F5F5;
+	padding: 0px 0px 10px 0;
+	color: #82B54E;
+	font-weight: 700;
+	text-align: center;
 	/*position: relative; /* rodapé fica por cima de uma parte da imagem do iphone */
 }
 
-.endereco{
-	padding: 10px;
-	font-size: 15px;
-	text-align: center;
+footer .nav a{
+	font-size: 50px;
+}
+
+footer .nav a:hover{
+	color: black;
+	background: none;
+}
+
+.endereco{	
+	padding: 3px;
+	font-size: 15px;	
 }
 
 .logo-rede-social{ 
@@ -168,10 +221,8 @@ footer{
 }
 
 .texto-rodape{
-	color: black;
 	font-size: 12px;
 	text-align: center;
-	padding-top: 10px;
 }
 
 /********************* Tipografia *********************/
@@ -194,8 +245,8 @@ h3{
 	font-size: 30px;
 	font-weight: 600;
 	letter-spacing: -0.04em;
+	color: #82B54E;
 }
-
 /********************* Media Queries *********************/
 /* xs */
 @media screen and (max-width: 767px){
